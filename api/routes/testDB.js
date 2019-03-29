@@ -10,12 +10,16 @@ router.get('/', (req, res, next) => {
 })
 
 // Connecting to MongoDB
-mongoose.connect('mongodb://mongodb:27017/test')
+// mongoose.connect('mongodb://localhost/users_test');
+
+mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
+// mongoose.connect('mongodb://mongodb:27017/test', { useNewUrlParser: true })
 // If there is a connection error send an error message
 mongoose.connection.on('error', error => {
     console.log('Database connection error:', error)
     databaseConnection = 'Error connecting to Database'
 })
+
 // If connected to MongoDB send a success message
 mongoose.connection.once('open', () => {
     console.log('Connected to Database!')
