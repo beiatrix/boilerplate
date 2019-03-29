@@ -6,7 +6,7 @@
 .pnp.js
 
 # DB nodes
-data-node/*
+/data-node/*
 
 # testing
 /coverage
