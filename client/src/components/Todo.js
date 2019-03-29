@@ -31,9 +31,41 @@ export default class Todo extends Component {
     data: fakeData
     }
   }
+
+  onSubmitHandle() {
+
+  }
+
+  onDeleteHandle() {
+
+  }
+
+  onEditHandle() {
+
+  }
+
+  onCompleteHandle() {
+
+  }
+
   render() {
     return (
-      <h1>hiya</h1>
+      <div>
+      <form onSubmit={this.onSubmitHandle.bind(this)}>
+        <input type="text" name="item" className="item" />
+        <button className="btn-add-item">Add</button>
+      </form>
+      <ul>
+        {this.state.data.map(item => (
+          <li key={item.id}>
+            {item.title}
+            <button onClick={this.onDeleteHandle.bind(this, item.id)}>Delete</button>
+            <button onClick={this.onEditHandle.bind(this, item.id, item.title)}>Edit</button>
+            <button onClick={this.onCompleteHandle}>Complete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
     )
   }
 }
