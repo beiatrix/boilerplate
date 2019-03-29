@@ -1,13 +1,14 @@
 version: '2'
 services:
   client:
-    image: webapp-client
+    image: mhart/alpine-node:8.11.4
     restart: always
     ports:
       - '3000:3000'
+    working_dir: /client/src/app
     volumes:
-      - ./client:/client
-      - /client/node_modules
+      - ./client:/client/src/app
+    entrypoint: ['npm', 'start']
     links:
       - api
     networks:
