@@ -33,3 +33,6 @@ services:
     command: mongod --noauth --smallfiles
     networks:
       - webappnetwork
+networks:
+  webappnetwork:
+    driver: bridge
