@@ -10,8 +10,9 @@ class App extends Component {
   async callAPI() {
     try {
       const res = await fetch('http://localhost:9000/testAPI')
+      const text = await res.text()
       this.setState({
-        apiResponse: res.text()
+        apiResponse: text
       })
     } catch (err) {
       console.error(err)
