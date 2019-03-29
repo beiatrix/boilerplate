@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Todo} from './components';
 
 class App extends Component {
   constructor(props) {
@@ -34,16 +35,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
           <p className="App-intro">{this.state.apiResponse}</p>
         </header>
+        <Todo></Todo>
       </div>
     );
   }
